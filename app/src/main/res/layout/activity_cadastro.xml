@@ -8,7 +8,7 @@
     tools:context=".CadastroActivity">
 
     <EditText
-        android:id="@+id/edtEmailCadastrp"
+        android:id="@+id/edtEmailCadastro"
         android:layout_width="344dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
@@ -39,7 +39,7 @@
         android:textAlignment="center"
         android:textColor="#FFF"
         android:textColorHint="#FFF"
-        app:layout_constraintBottom_toTopOf="@+id/edtEmailCadastrp"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmailCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         app:srcCompat="@drawable/icon_add_person" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spnSexoCadastro"
         android:layout_width="346dp"
         android:layout_height="25dp"
         android:layout_marginStart="32dp"
@@ -100,11 +100,11 @@
         android:textAlignment="center"
         android:textColor="#FFF"
         android:textColorHint="#FFF"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintBottom_toTopOf="@+id/spnSexoCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailCadastrp" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailCadastro" />
 
     <Button
         android:id="@+id/btnCadastrado"
@@ -116,5 +116,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spnSexoCadastro" />
 </androidx.constraintlayout.widget.ConstraintLayout>

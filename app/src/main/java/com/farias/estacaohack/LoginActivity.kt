@@ -1,5 +1,6 @@
 package com.farias.estacaohack
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,12 +14,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val minhaPref = getSharedPreferences("minha_preferencia", Context.MODE_PRIVATE)
+        val name = minhaPref.getString("nome", "Error preference nome")
+        val pass = minhaPref.getString("senha", "Error preference senha")
+
         // Ação para o botão de entrar
 
         btnEntrar.setOnClickListener {
             val usuario = edtUsuario.text.toString().trim()
             val senha = edtSenha.text.toString().trim()
-
 
             // Condição para verificar o login
 
@@ -26,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
                 txvResultado.text = "Usuário está vazio!"
             } else if (senha.isEmpty()) {
                 txvResultado.text = "Senha está vazia!"
-            } else if (usuario == "Guilherme" && senha == "batata") {
+            } else if (usuario == name && senha == pass) {
                 txvResultado.text = "Usuário logado com sucesso!"
 
                 Handler().postDelayed({
@@ -45,7 +49,5 @@ class LoginActivity : AppCompatActivity() {
 
         btnCadastrar.setOnClickListener{
                 startActivity(Intent(this@LoginActivity, CadastroActivity::class.java))
-
-                finish()
         }    }
 }
